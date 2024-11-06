@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # 1. Objectius
 
-L'objectiu final és trobar aquells fosfopètids que ens permeten diferenciar entre dos grups de tumor: PD i MSS. En aquest treball ens centrarem en avaluar la qualitat tècnica de les dades abans de procedir amb l'anàlisi diferencial.
+L'objectiu final és trobar aquells fosfopètids que ens permeten diferenciar entre dos grups de tumor en models PDX: PD i MSS. En aquest treball ens centrarem en avaluar la qualitat tècnica de les dades abans de procedir amb l'anàlisi diferencial.
 
 # 2. Resum executiu
 
@@ -31,7 +31,7 @@ LSLEGDHSTPPSAYGSVK[14] Phospho (P07355) (log2FC = -3.9, mean_abundance = 22.5).
 
 * En global, les mostres semblen tenir una qualitat tècnica suficient com per a procedir amb l'anàlisi diferencial. No obstant hi ha uns quants punts que s'hauran d'abordar:
 
-  * Identificar possibles efectes batch. Les mostres no s'acaben d'agrupar per fenotip. Caldrà parlar amb els investigadors per estudiar bé el procés d'obtenció de la mostra.
+  * Identificar possibles efectes batch. Les mostres no s'acaben d'agrupar per fenotip. Caldrà parlar amb els investigadors per estudiar bé el disseny experimetal.
   
   * Gestió dels valors *missing*. Hem vist que aquest valors capturen part de la variància.
   
@@ -92,7 +92,7 @@ Aquest repositori conté el present informe, les dades de l'estudi que s'han uti
 
 # 4. Resultats i discussió
 
-El dataset d'estudi prové d'un experiment de fosfoproteòmica en el què volem determinar les diferències entre dos tipus de tumor (MSS i PD) en models PDX. Partim de 3 rèpliques biològiques de cada fenotip i dues rèpliques tècniques de cada mostra.
+El dataset d'estudi prové d'un experiment de fosfoproteòmica en el què volem determinar les diferències entre dos tipus de tumor (MSS i PD) en models PDX. Partim de 3 rèpliques biològiques de cada fenotip i dues rèpliques tècniques de cada mostra. El número de rèpliques biològiques, tot i ser usual en aquest tipus d'estudis, és baix (n = 3). En la mesura del possible recomanem augmentar el nombre de rèpliques biològiques. És millor tenir sis rèpliques biològiques i cap tècnica que tres bilògiques per duplicat.
 
 En aquesta anàlisi realizem una exploració qualitativa de les dades, que és el pas previ a l'anàlisi diferencial.
 
@@ -145,7 +145,7 @@ La qualitat tècnica de les mostres de l'estudi no és excel·lent i hi ha algun
 
 * Gestió dels valors *missing*: Hem d'acabar d'estudiar la influència d'aquests valors en l'agrupació de les mostres. També hem de valorar si cal filtrar i/o imputar aquests valors.
 
-* Efecte batch: No acabem de diferenciar per fenotip i podria ser que no estiguessim tenint en compte algun possible efecte batch. Caldria parlar amb els investigadors per entendre ben bé com s'han processat les mostres (dia, personal, ordre d'injecció l'espectrometre de masses etc...).
+* Efecte batch: No acabem de diferenciar per fenotip i podria ser que no estiguessim tenint en compte algun possible efecte batch. Caldria parlar amb els investigadors per entendre ben bé com s'han processat les mostres (sexe, dades clíniques, dia de l'experiment, personal, ordre d'injecció l'espectrometre de masses etc...).
 
 * L'estudi està basat amb l'anàlisi dels fosfopètids. Aquest estudi és informatiu, però suggeriríem fer l'estudi a nivell de *phospho site* (*p-site*) i no de fosfopèptid. Per això hauríem d'anotar el lloc de fosforilació dins la proteïna i fer un resum dels diferents pèptids que apunten al mateix *p-site*. Aquest nou enfoc pot ser més informatiu ja que des d'un punt de vista biològic té més sentit parlar de llocs de fosforilació que no pas de fosfopèptids.
 
